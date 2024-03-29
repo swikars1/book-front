@@ -44,7 +44,6 @@ This system is built upon a stack of JavaScript/TypeScript technologies. This ap
 
 ### Design Rationale
 
-- Technology Stack: JavaScript/TypeScript hjelps to unite frontend and backend development, providing a seamless experience with strong community support.
 - Type Safety: TypeScript and Prisma together enhance code reliability and maintainability.
 - Structure: Elysia enforces a well-organized backend architecture.
 - Developer Experience: Choices prioritize streamlined development - reducing boilerplate and providing robust abstractions.
@@ -58,4 +57,4 @@ This system is built upon a stack of JavaScript/TypeScript technologies. This ap
 - Search Optimization: For extensive book collections, explore indexing and integration with specialized search libraries.
 - Security: Implement robust user authentication and authorization when user accounts become a system requirement.
 - Enhanced Caching: Investigate additional caching strategies to improve performance under heavy load.
-# book-front
+- Need proper error handling and log handling for production server.
