@@ -1,30 +1,61 @@
-# React + TypeScript + Vite
+# Library Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technical Documentation
 
-Currently, two official plugins are available:
+### Usuage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Frontend
 
-## Expanding the ESLint configuration
+- Goto frontend repo.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Running development server: `npm i && npm run dev`
+- Server will start on http://localhost:5173/
+- Running automated E2E test: `npm run test` (needs dev server running)
 
-- Configure the top-level `parserOptions` property like this:
+#### Backend
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Goto backend repo.
+- Running development server: `docker compose up`
+- Server will start on http://localhost:5123/
+- API testing endpoint on http://localhost:5123/swagger
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Overview
+
+This system is built upon a stack of JavaScript/TypeScript technologies. This approach enables unified development experience across both frontend and backend while helping developer productivity, maintainability, and the potential for future growth.
+
+### Key Components
+
+#### Backend
+
+- Elysia: Structures a well-defined REST API framework for type safety and speed.
+- Prisma: Provides type-safe database interactions and simplifies data modeling.
+- SQLite: A lightweight file-based database for development and smaller deployments.
+- Swagger: Documents API endpoints, promoting clarity and facilitating integration.
+
+#### Frontend:
+
+- React: Creates dynamic UIs through reusable components and efficient rendering.
+- Tailwind CSS: Utility-first approach for rapid styling and customization.
+
+- React Query: Handles data fetching, caching, and state synchronization with the backend.
+- Zod: Ensures input data integrity and type safety through schema-based validation.
+
+- Puppeteer: Enables end-to-end testing by simulating browser-based user interactions.
+
+### Design Rationale
+
+- Technology Stack: JavaScript/TypeScript hjelps to unite frontend and backend development, providing a seamless experience with strong community support.
+- Type Safety: TypeScript and Prisma together enhance code reliability and maintainability.
+- Structure: Elysia enforces a well-organized backend architecture.
+- Developer Experience: Choices prioritize streamlined development - reducing boilerplate and providing robust abstractions.
+- Modularity: React's component-based approach promotes code reusability and a clean separation of concerns.
+- Scalability Considerations: While the initial setup is optimized for a streamlined development experience, the system architecture is designed with potential growth in mind.
+
+### Assumptions and Future Considerations
+
+- Author Usuage: Author is automatically created when a book is created if author with same name doesn't exist.
+- Database Scaling: For production environments with very large datasets, consider migrating to a more robust database solution (e.g., PostgreSQL, MySQL).
+- Search Optimization: For extensive book collections, explore indexing and integration with specialized search libraries.
+- Security: Implement robust user authentication and authorization when user accounts become a system requirement.
+- Enhanced Caching: Investigate additional caching strategies to improve performance under heavy load.
+# book-front
